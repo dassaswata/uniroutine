@@ -1,0 +1,347 @@
+/* =========================
+   HOME / ROUTINES PAGE
+   ========================= */
+
+:root {
+  --sky-bg: #f7fbff;
+  --sky-border: #d6ebff;
+  --sky-hover: #eaf6ff;
+  --sky-text: #0b3a66;
+  --sky-muted: #5b7fa6;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --border-soft: rgba(10, 40, 80, 0.08);
+}
+
+/* === PAGE CONTAINER === */
+.routines-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* === HEADER === */
+.routines-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.routines-header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--sky-text);
+}
+
+.routines-header p {
+  color: var(--sky-muted);
+  font-weight: 500;
+}
+
+/* === CARD === */
+.table-container {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 10px 30px rgba(10, 40, 80, 0.08);
+}
+
+/* === TITLE === */
+.table-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--sky-text);
+  margin-bottom: 1.5rem;
+}
+
+/* === TABLE WRAPPER === */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--sky-border);
+  background: white;
+}
+
+/* === TABLE === */
+.routine-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.routine-table th {
+  background: linear-gradient(to bottom, #f7fbff, #eef6ff);
+  padding: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sky-text);
+  border-bottom: 1px solid var(--sky-border);
+  border-right: 1px solid var(--sky-border);
+}
+
+.routine-table th:last-child {
+  border-right: none;
+}
+
+.routine-table td {
+  padding: 14px;
+  border-bottom: 1px solid #edf2f7;
+  text-align: center;
+  border-right: 1px solid #edf2f7;
+}
+
+.routine-table td:last-child {
+  border-right: none;
+}
+
+/* === DAY COLUMN === */
+.day-column,
+.day-cell {
+  background: #f4f9ff;
+  font-weight: 700;
+  color: var(--sky-text);
+  border-right: 2px solid var(--sky-border);
+}
+
+/* === ROW HOVER === */
+.routine-table tr:hover td {
+  background: var(--sky-hover);
+}
+
+/* === SUBJECT CELL === */
+.subject-cell {
+  transition: background-color 0.2s ease;
+}
+
+.cell-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.subject-name {
+  font-weight: 700;
+  color: var(--sky-text);
+}
+
+.subject-code {
+  font-size: 0.75rem;
+  color: var(--sky-muted);
+}
+
+.teacher-name,
+.room-name {
+  font-size: 0.75rem;
+  color: #4a6b8a;
+}
+
+/* === EMPTY CELL === */
+.cell-empty {
+  color: #b6cce2;
+  font-style: italic;
+}
+
+/* === LUNCH === */
+.lunch-header,
+.lunch-cell {
+  background: #fff7e6 !important;
+  color: #9c6b1a;
+}
+
+.lunch-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* === REACT SELECT (ROUNDED) === */
+.routine-select {
+  width: 280px;
+}
+
+/* pill-shaped control */
+.routine-select__control {
+  min-height: 44px;
+  border-radius: 999px;
+  border: 2px solid var(--sky-border);
+  background: white;
+  box-shadow: none;
+  padding-left: 6px;
+}
+
+/* focus */
+.routine-select__control--is-focused {
+  border-color: #9ac7ff;
+  box-shadow: 0 0 0 3px rgba(154, 199, 255, 0.35);
+}
+
+/* value text */
+.routine-select__single-value {
+  color: var(--sky-text);
+  font-weight: 600;
+}
+
+/* placeholder */
+.routine-select__placeholder {
+  color: var(--sky-muted);
+  font-weight: 500;
+}
+
+/* dropdown menu */
+.routine-select__menu {
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(10, 40, 80, 0.15);
+  overflow: hidden;
+}
+
+/* menu padding */
+.routine-select__menu-list {
+  padding: 6px;
+}
+
+/* options */
+.routine-select__option {
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.routine-select__option--is-focused {
+  background: var(--sky-hover);
+}
+
+.routine-select__option--is-selected {
+  background: #cfe6ff;
+  color: var(--sky-text);
+  font-weight: 600;
+}
+
+/* remove separator */
+.routine-select__indicator-separator {
+  display: none;
+}
+
+/* arrow */
+.routine-select__dropdown-indicator {
+  color: var(--sky-text);
+}
+
+/* === FOOTER === */
+.info-footer {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--sky-muted);
+}
+
+/* === ROUTINE SELECTOR CONTAINER === */
+.routine-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.routine-selector label {
+  font-weight: 600;
+  color: var(--sky-text);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .routine-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .routine-select {
+    width: 100%;
+  }
+}
+
+/* === LOADING STATE === */
+.loading-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 2rem 0;
+}
+
+.loading-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--sky-muted);
+}
+
+/* === CIRCULAR THROBBER (RING) === */
+.throbber-ring {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid rgba(11, 58, 102, 0.15);
+  border-top-color: #0b3a66;
+  animation: ring-spin 0.9s linear infinite;
+}
+
+@keyframes ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   OFFLINE DIALOG
+   ========================= */
+
+.offline-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(247, 251, 255, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+.offline-dialog {
+  background: white;
+  border-radius: 18px;
+  padding: 2rem 2.5rem;
+  text-align: center;
+  max-width: 420px;
+  border: 1px solid #d6ebff;
+  box-shadow: 0 20px 40px rgba(10, 40, 80, 0.18);
+  animation: offlinePop 260ms ease-out both;
+}
+
+.offline-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.offline-dialog h2 {
+  margin: 0.5rem 0;
+  color: #0b3a66;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.offline-dialog p {
+  color: #5b7fa6;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@keyframes offlinePop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
